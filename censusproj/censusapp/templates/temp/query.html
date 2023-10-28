@@ -1,0 +1,55 @@
+{% extends "temp/base.html" %}
+{% block body_block %}
+    <div class="container my-5">
+        {% if query == 'tax' %}
+            {% if taxable_adults %}
+                <div class="container style-2 shadow-lg">
+                    <ul>
+                        <h2>List of Taxable Adults</h2>
+                        <p>Total number of taxable adults: {{ total }}</p>
+                        {% for adult in taxable_adults %}
+                            <li class="pill">
+                                {{ adult.name.full_Name }}
+                            </li>   
+                        {% endfor %}
+                    </ul>
+                </div>
+            {% else %}
+                <h3>Sorry No data to display 😬</h3>
+            {% endif %}
+        {% elif query == 'death' %}
+            {% if dead_indigenes %}
+            <div class="container style-2 shadow-lg">
+                <ul>
+                    <h2>List of Dead Indigenes</h2>
+                    <p>Total number of dead indigenes: {{ total }}</p>
+                    {% for indigene in dead_indigenes %}
+                        <li class="pill">
+                            {{ indigene.full_Name }}
+                        </li>   
+                    {% endfor %}
+                </ul>
+            </div>
+            {% else %}
+                <h3>Sorry No data to display 😬</h3>
+            {% endif %}
+        {% else %}
+            {% if primary_students %}
+            <div class="container style-2 shadow-lg">
+                <ul>
+                    <h2>List of Primary Student</h2>
+                    <p>Total number of primary student: {{ total }}</p>
+                    {% for student in primary_students %}
+                        <li class="pill">
+                            {{ student.name.full_Name }}
+                        </li>   
+                    {% endfor %}
+                </ul>
+            </div>
+            {% else %}
+                <h3>Sorry No data to display 😬</h3>
+            {% endif %}
+        
+        {% endif %}
+    </div>
+{% endblock %}

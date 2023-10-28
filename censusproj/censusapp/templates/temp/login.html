@@ -1,0 +1,17 @@
+{% extends "temp/base.html" %}
+{% block body_block %}
+    <div class="container my-5">
+        <form action="{% url 'censusapp:user_login' %}" method="post" style="width:50%; margin:0 auto; border-radius:20px; padding: 50px; background-color: gainsboro;" class="shadow-lg">
+            <h1 class="mb-4">Please Login</h1>
+            {% csrf_token %}
+            <label class='form-label' for="username">Username:</label>
+            <input type="text" name="username" class="form-control" placeholder="Enter Your Username"><br>
+
+
+            <label class='form-label' for="password">Password:</label>
+            <input type="password" name="password" class="form-control"><br>
+
+            <button type="submit" class="btn btn-secondary">Login</button>
+        </form>
+    </div>
+{% endblock %}

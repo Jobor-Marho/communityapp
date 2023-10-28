@@ -1,0 +1,13 @@
+{% extends "temp/base.html" %}
+{% load static %}
+{% block body_block %}
+    <div class="container my-5">
+        
+        <form action="" method="post" style="width:70%; margin:0 auto; border-radius:20px; padding: 50px; background-color: gainsboro;" class="shadow-lg">
+            <h2 class="mb-4">Add an Admin</h2>
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button class="btn btn-secondary">Submit</button>
+        </form>
+    </div>
+{% endblock %}
