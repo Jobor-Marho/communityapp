@@ -78,8 +78,12 @@ WSGI_APPLICATION = 'censusproj.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'railway',
+        'USER': 'postgres',
+        'PASSWORD': 'acDdBFFa23cc-B5D11*bf3d-BaAg-25-',
+        'HOST': 'viaduct.proxy.rlwy.net',
+        'PORT': '14703',
     }
 }
 
