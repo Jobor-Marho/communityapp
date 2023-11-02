@@ -1,0 +1,26 @@
+{% extends "temp/base.html" %}
+{% load static %}
+{% block body_block %}
+<div class="container my-5 ">
+    {% if error %}
+        <p class="error">No Indigene has been added</p>
+        
+        <form class="shadow-lg" action="{% url 'censusapp:birth' %}" method="post" style="width:50%; margin:0 auto; border-radius:20px; padding: 50px; background-color: gainsboro;">
+            <h2>Enter a birth year </h2>
+            {% csrf_token %}
+            <label for="year" class="form-label">Year of Birth:</label>
+            <input type="number" name="year" id="year" placeholder="e.g YYYY" class="form-control">
+            <button class="btn btn-secondary" type="submit">Submit</button>
+        </form>
+    {% else %}
+        
+        <form class="shadow-lg" action="{% url 'censusapp:birth' %}" method="post" style="width:50%; margin:0 auto; border-radius:20px; padding: 50px; background-color: gainsboro;">
+            <h2>Enter a birth year </h2>
+            {% csrf_token %}
+            <label for="year" class="form-label">Year of Birth:</label><br>
+            <input type="number" name="year" id="year" placeholder="e.g YYYY" class="form-control"><br>
+            <button class="btn btn-secondary" type="submit">Submit</button>
+        </form>
+    {% endif %}
+</div>
+{% endblock %}
