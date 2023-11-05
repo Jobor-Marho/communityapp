@@ -27,7 +27,7 @@ SECRET_KEY = 'django-insecure-^q(q*1wiv$y9u$@v%&f=o62#_k)!$r9eu5j&t!#5=o)tmh9l$f
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['.vercel.app']
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -78,12 +78,8 @@ WSGI_APPLICATION = 'censusproj.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'railway',
-        'USER': 'postgres',
-        'PASSWORD': 'acDdBFFa23cc-B5D11*bf3d-BaAg-25-',
-        'HOST': 'viaduct.proxy.rlwy.net',
-        'PORT': '14703',
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
 
@@ -131,7 +127,8 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
-STATIC_URL = 'static/'
+STATIC_URL = '/static/'
+STATIC_ROOT = BASE_DIR.joinpath('staticfiles')
 STATICFILES_DIRS = [
     STATIC_DIR, 
 ]

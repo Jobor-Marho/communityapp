@@ -1,0 +1,1 @@
+web: gunicorn censusproj.wsgi --log-file -
