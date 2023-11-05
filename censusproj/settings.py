@@ -27,7 +27,7 @@ SECRET_KEY = 'django-insecure-^q(q*1wiv$y9u$@v%&f=o62#_k)!$r9eu5j&t!#5=o)tmh9l$f
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['.vercel.app']
+ALLOWED_HOSTS = ['.vercel.app', '127.0.0.1', 'localhost']
 
 
 # Application definition
@@ -78,8 +78,12 @@ WSGI_APPLICATION = 'censusproj.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'railway',
+        'USER': 'postgres',
+        'PASSWORD': 'gCA*E3Be2gCGG3FAdEa*1dEc3AB-G4de',
+        'HOST': 'viaduct.proxy.rlwy.net',
+        'PORT': '24648',
     }
 }
 
