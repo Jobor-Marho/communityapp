@@ -2,14 +2,15 @@
 {% load static %}
 {% block body_block %}
 <section id="intro" class="mt-5">
-    <div class="container-lg">
-        {% if registered %}
-            <p class="success fixed-top">New data Added</p>
-        {% elif admin_registered %}
-            <p class="success fixed-top">New Admin Added</p>
-        {% endif %}
+
+
         <div class="row justify-content-center align-items-center m-5 style shadow-lg" style="padding: 100px 20px;">
-            <div class="col-md-5 text-center text-md-start">
+            {% if registered %}
+                <p class="success fixed-top">New data Added</p>
+            {% elif admin_registered %}
+                <p class="success fixed-top">New Admin Added</p>
+            {% endif %}
+            <div class="col-md-6 text-center text-md-start">
                 <h1>
                     <div class="display-2">
                         <i class="bi bi-bar-chart"></i>
@@ -40,7 +41,7 @@
                 </span>
             </div>
         </div>
-    </div>
+
 </section>
     
 {% endblock %}
